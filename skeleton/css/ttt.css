@@ -40,6 +40,10 @@ li.O {
   color: red;
 }
 
+li.green {
+  background-color: green;
+}
+
 .game-over {
   display: none;
 }

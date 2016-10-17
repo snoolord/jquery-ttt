@@ -31,9 +31,17 @@ class View {
       this.unBindEvents();
       $('.game-over').show();
       if (this.game.winner()) {
-        $('.game-over').html(`Congrats ${this.game.winner()}, you win!`)
+        $('.game-over').html(`Congrats ${this.game.winner()}, you win!`);
+        this.game.board.winningPieces.forEach( pos => {
+          $('li').each(function(){
+            let piecePos = $(this).data('pos');
+            if( piecePos[0] === pos[0] && piecePos[1] === pos[1]) {
+              $(this).addClass('green');
+            }
+          });
+        });
       } else {
-        $('.game-over').html('Sorry, you both lost!!!')
+        $('.game-over').html('Sorry, you both lost!!!');
       }
 
     }

@@ -76,6 +76,7 @@ class Board {
       }
 
       if (winner) {
+        this.winningPieces = posSeq;
         return targetMark;
       }
     }
